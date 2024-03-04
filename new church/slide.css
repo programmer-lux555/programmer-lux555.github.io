@@ -1,0 +1,180 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#frame {
+    margin: 0 auto;
+    width: 1500px;
+    max-width: 100%;
+    text-align: center;
+}
+#frame input[type=radio] {
+    display: none;
+}
+#frame label {
+    cursor: pointer;
+    text-decoration: none;
+}
+#slides {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+#frame1:checked~#slides .inner {
+    margin-left: 0;
+}
+#frame2:checked~#slides .inner {
+    margin-left: -100%;
+}
+#frame3:checked~#slides .inner {
+    margin-left: -200%;
+}
+#frame4:checked~#slides .inner {
+    margin-left: -300%;
+}
+#slides .inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 0;
+    height: 600px;
+}
+#slides .frame {
+    width: 25%;
+    float: left;
+    display: flex;
+    height: 100%;
+    color: #FFF;
+}
+#slides .frame_1 {
+    background: url(chram1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#slides .frame_2 {
+    background: url(chram2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#slides .frame_3 {
+    background: url(chram3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#slides .frame_4 {
+    background: url(chram4.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#controls {
+    margin: -180px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+}
+#controls label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    opacity: .4;
+    background: #000;
+}
+#controls label:hover {
+    opacity: 1;
+}
+#frame1:checked~#controls label:nth-child(2),
+#frame2:checked~#controls label:nth-child(3),
+#frame3:checked~#controls label:nth-child(4),
+#frame4:checked~#controls label:nth-child(1) {
+    background:
+        url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+    float: right;
+    margin: 0 -50px 0 0;
+    display: block;
+}
+#frame1:checked~#controls label:nth-last-child(2),
+#frame2:checked~#controls label:nth-last-child(3),
+#frame3:checked~#controls label:nth-last-child(4),
+#frame4:checked~#controls label:nth-last-child(1) {
+    background:
+        url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+    float: left;
+    margin: 0 0 0 -50px;
+    display: block;
+}
+#bullets {
+    margin: 150px 0 0;
+    text-align: center;
+}
+#bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #fed68c;
+    margin: 0 10px;
+}
+#frame1:checked~#bullets label:nth-child(1),
+#frame2:checked~#bullets label:nth-child(2),
+#frame3:checked~#bullets label:nth-child(3),
+#frame4:checked~#bullets label:nth-child(4) {
+    background: #196842;
+}
+@media screen and (max-width: 300px) {
+    #frame1:checked~#controls label:nth-child(2),
+    #frame2:checked~#controls label:nth-child(3),
+    #frame3:checked~#controls label:nth-child(4),
+    #frame4:checked~#controls label:nth-child(1),
+    #frame1:checked~#controls label:nth-last-child(2),
+    #frame2:checked~#controls label:nth-last-child(3),
+    #frame3:checked~#controls label:nth-last-child(4),
+    #frame4:checked~#controls label:nth-last-child(1) {
+        margin: 0;
+    }
+    #slides {
+        max-width: calc(100% - 140px);
+        margin: 0 auto;
+    }
+}
+
+.frame-content{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 450px;
+    height: 280px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.129);
+    backdrop-filter: blur(1px);
+}
+
+.frame-text{
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 800;
+}
+
+.btn{
+    width: 140px;
+    height: 45px;
+    background: #008042;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    text-decoration-line: none;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 800;
+    border-radius: 10px;
+}
